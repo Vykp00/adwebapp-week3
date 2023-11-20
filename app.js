@@ -21,10 +21,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+/*
 app.use('/todo', indexRouter);
 app.use('/user', indexRouter);
 app.use('/user/:id', indexRouter);
-app.use('/user/:id', indexRouter); // for router.delete()
+app.use('/user/:id', indexRouter); // for router.delete() */
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

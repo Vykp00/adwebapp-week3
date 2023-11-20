@@ -3,7 +3,41 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+    script(src='/javascripts/utils.js')
   body
     block content
+    form(action="/todo", method="post")
+    fieldset 
+      legend To Do Form
+      p
+        input(type="text", id="input-name", name="name", required, placeholder="Enter your name")
+      p
+        input(type="text", id="input-task", name="task", required, placeholder="Enter task's name")
+      p.buttons
+        input(type="submit", id="submit-data", value="Submit")
+
+    // Display response message
+    div(id='response-message')
+
+    // Search user section
+    hr
+    h2 Search User
+    form(action='#', method='get')
+      label(for='search-name') Name:
+      input(type='text', id='search-name', name='searchName', required)
+      br
+      button(type='button', id='search') Search
+
+    // Display search results
+    div(id='search-results')
+      // User details will be displayed here
+      p(id='user-details')
+
+      // Display todos and delete task buttons
+      ul(id='todos-list')
+    
+      // Delete user button is hidden until user is found
+      button(type='button', id='delete-user', style='display:none') Delete User
     hr
     footer Copyright Vy
